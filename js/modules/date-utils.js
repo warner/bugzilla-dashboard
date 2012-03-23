@@ -59,19 +59,21 @@ Require.modules["date-utils"] = function(exports) {
     diff = ((now - date.getTime()) / 1000),
     day_diff = Math.floor(diff / 86400);
 			
-    if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+    if ( isNaN(day_diff) || day_diff < 0 )
       return null;
     
     return day_diff == 0 && (
       diff < 60 && "just now" ||
-	diff < 120 && "1 minute ago" ||
-	diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
-	diff < 7200 && "1 hour ago" ||
-	diff < 86400 && Math.floor( diff / 3600 ) + " hours ago"
+	diff < 120 && "1 minute" ||
+	diff < 3600 && Math.floor( diff / 60 ) + " minutes" ||
+	diff < 7200 && "1 hour" ||
+	diff < 86400 && Math.floor( diff / 3600 ) + " hours"
     ) ||
       day_diff == 1 && "Yesterday" ||
-      day_diff < 7 && day_diff + " days ago" ||
-      day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+      day_diff < 7 && day_diff + " days" ||
+      day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks" ||
+      day_diff < 12*31 && Math.ceil( day_diff / 31 ) + " months" ||
+      "a long time ago";
   };
 
   exports.timeAgo = function timeAgo(ms) {

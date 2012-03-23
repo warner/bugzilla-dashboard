@@ -625,6 +625,7 @@ Require.modules["app/ui/dashboard"] = function(exports, require) {
 
     report("#assigned-bugs", key, forceUpdate,
            {status: ["NEW", "UNCONFIRMED", "ASSIGNED", "REOPENED"],
+            changed_after: dateUtils.timeAgo(12*4*MS_PER_WEEK),
             email1: myUsername,
             email1_type: "equals",
             email1_assigned_to: 1});
