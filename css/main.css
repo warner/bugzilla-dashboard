@@ -134,6 +134,18 @@ table, caption {
     color: red;
 }
 
+.P1 {
+    background-color: #FEE;
+}
+
+.P2 {
+    background-color: #FEF;
+}
+
+.P3 {
+    background-color: #EEF;
+}
+
 .status-RESOLVED, .status-VERIFIED {
     text-decoration: line-through;
 }

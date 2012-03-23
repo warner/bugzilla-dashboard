@@ -526,6 +526,7 @@ Require.modules["app/ui/dashboard"] = function(exports, require) {
         row.addClass(bug.priority);
         row.addClass(bug.severity);
       }
+      row.attr("title", bug.priority+" "+bug.severity+" "+bug.target_milestone);
       row.find(".last-changed").attr("data-last-change",
                                      bug.last_change_time);      
       table.append(row);
